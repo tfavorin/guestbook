@@ -1,6 +1,7 @@
 <?php
 
 use Particle\Validator\Validator;
+
 require_once '../vendor/autoload.php';
 
 $file = '../storage/database.db';
@@ -66,8 +67,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <!-- Add your site or application content here -->
         <?php foreach ($comment->findAll() as $comment) : ?>
             <div class="comment">
-                <h3>On <?php $comment->getSubmissionDate() ?>, <?= $comment->getName() ?> wrote:</h3>
-                <p><?php $comment->getComment(); ?></p>
+                <h3>On <?php echo $comment->getSubmissionDate(); ?>, <?php echo $comment->getName(); ?> wrote:</h3>
+                <p><?php echo $comment->getComment(); ?></p>
             </div>
         <?php endforeach; ?>
 
